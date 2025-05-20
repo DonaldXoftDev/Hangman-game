@@ -40,14 +40,16 @@ while not game_over:
 
     print("Word to guess: " + display)
 
-    if guess not in chosen_word:
+    if guess.isalpha() and guess not in chosen_word:
         lives -= 1
         print(f"You guessed {guess}, that's not in the word. You lose a life.")
+    else:
+        print('That is not a letter.')
 
-        if lives == 0:
-            game_over = True
+    if lives == 0:
+        game_over = True
 
-            print(f"***********************IT WAS {chosen_word}! YOU LOSE**********************")
+        print(f"***********************IT WAS {chosen_word}! YOU LOSE**********************")
 
     if "_" not in display:
         game_over = True
